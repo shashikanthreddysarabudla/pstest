@@ -1,0 +1,8 @@
+$names= "BOB", "JAMES", "JASON", "SARAH", "AMY"
+
+$count = 0
+
+ForEach ($singlename in $names){
+    $count +=1
+    write-host "$singlename"
+} write-host "$count this is it"

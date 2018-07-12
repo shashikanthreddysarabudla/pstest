@@ -1,0 +1,5 @@
+Do {
+    $numbers = $numbers + 1
+
+    write-host "the value currently is of the variable is $numbers"
+} while ($numbers -lt 10)
