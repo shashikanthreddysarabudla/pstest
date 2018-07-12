@@ -1,0 +1,18 @@
+Function Get-PowerShellRelease {
+    #Using this to get rid of any nasty output Invoke WebRequest in Power Shell
+    $progress = $ProgressPreference
+    $ProgressPreference = "Silently Continue"
+    $JSON = Invoke-WebRequest "https://api.github.com/repos/powershell/powershell/releases"
+    If ($psversiontable.GitcommitId) {
+        If ($JSON.tag_name -ne $psversiontable.GitcommitId) {
+            Write-Output "New version of Powershell available"
+            $JSON.body
+        } Else {
+            "PowerShell is currently up to date"
+        }
+    }
+    $ProgressPreference = $progress
+}
+
+Get-PowerShellRelease
+
