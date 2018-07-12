@@ -1,0 +1,3 @@
+if (10 -gt 11) {
+    write-host "yes it is !"
+}elseif (11 -gt 10) { Write-Host 'got it right this time '}
